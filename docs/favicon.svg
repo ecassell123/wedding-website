@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#505939"/>
+  <text
+    x="34"
+    y="52"
+    text-anchor="middle"
+    font-family="'Pinyon Script', 'Great Vibes', cursive"
+    font-size="58"
+    fill="white"
+    opacity="0.95"
+  >C</text>
+</svg>
