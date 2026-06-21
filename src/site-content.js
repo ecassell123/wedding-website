@@ -98,14 +98,14 @@ export const events = {
     date:        'March 24, 2027',
     title:       'Welcome Party',
     subtitle:    'Evening Celebration',
-    badge:       'By Invitation',
-    badgeStyle:  'invite',
-    venue:       'TBD',
-    address:     '',
-    mapsUrl:     '',
+    badge:       'Open to All',
+    badgeStyle:  'open',
+    venue:       'Edison Country Club',
+    address:     '3800 Palm Beach Blvd, Fort Myers, FL 33916',
+    mapsUrl:     'https://maps.google.com/?q=Edison+Country+Club+Fort+Myers+FL',
     time:        'TBD',
-    description: 'For invited guests, we\'ll gather Wednesday evening for a relaxed welcome celebration before the big day. Location and timing will be shared as soon as they are finalized.',
-    privateNote: 'Details will be shared directly with invited guests.',
+    description: 'Everyone is invited! Join us Wednesday evening for a relaxed welcome celebration at Edison Country Club before the big day.',
+    privateNote: '',
   },
 
   ceremony: {
@@ -269,7 +269,7 @@ export const faq = [
   },
   {
     q: 'Is the welcome party open to everyone?',
-    a: 'The Wednesday evening welcome party is by invitation. If you have received a specific invitation to that event, details will be shared with you directly.',
+    a: 'Yes! The Wednesday evening welcome party at Edison Country Club is open to all guests. We would love to see you there.',
   },
   {
     q: 'What should I bring to the beach day?',

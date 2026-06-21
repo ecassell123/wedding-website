@@ -16,7 +16,7 @@ export default {
         parchment: { DEFAULT: '#ede0cc' },
       },
       fontFamily: {
-        script: ['Pinyon Script', 'Parfumerie Script', 'Great Vibes', 'Dancing Script', 'cursive'],
+        script: ['Homemade Apple', 'cursive'],
         serif:  ['Alice', 'Georgia', 'serif'],
         sans:   ['Alice', 'Georgia', 'serif'],
       },
