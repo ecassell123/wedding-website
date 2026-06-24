@@ -113,6 +113,10 @@
         </ul>
       </li>
 
+      <li>
+        <a href="#rsvp" class="btn-primary text-xs py-2 px-5"
+          style="min-height:36px; padding-top:0.5rem; padding-bottom:0.5rem; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.5); color:#fff;">RSVP</a>
+      </li>
     </ul>
 
     <!-- Hamburger -->
@@ -179,6 +183,7 @@
         </div>
       </div>
 
+      <a href="#rsvp"      class="btn-primary mt-4">RSVP Now</a>
     </nav>
 
     <p class="text-center pb-8 label-caps" style="color:var(--c-text-soft)">March 25, 2027 · Fort Myers, FL</p>
@@ -216,6 +221,7 @@
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row gap-3 items-center">
         <a href="#main-content" class="btn-primary" style="min-width:200px">Explore the Celebration</a>
+        <a href="#rsvp"     class="btn-secondary" style="min-width:200px">RSVP</a>
       </div>
 
       <!-- Scroll indicator -->
@@ -593,7 +599,7 @@
         <article class="event-card mb-8 reveal" aria-labelledby="event-reception">
           <div class="relative" style="height:220px; overflow:hidden">
             <img
-              src="/images/venues/oasis.jpeg"
+              src="/images/venues/oasis.jpg"
               alt="Oasis Outdoors — the outdoor venue at Chop it Up in North Fort Myers"
               class="w-full h-full object-cover"
               style="object-position: center 50%"
@@ -1173,25 +1179,208 @@
         </div>
 
         <p class="text-center mt-10 prose-wedding text-sm reveal">
-          Still have questions? Reach out to our moms — they would love to help!<br class="hidden sm:inline" />
-          <span class="inline-block mt-2">
-            <strong>Jenn Hohl</strong> —
-            <a href="mailto:jennhohl12@gmail.com" style="color:var(--c-berry); text-decoration:underline">jennhohl12@gmail.com</a>
-            &nbsp;·&nbsp;
-            <a href="tel:5027801722" style="color:var(--c-berry); text-decoration:underline">(502) 780-1722</a>
-          </span>
-          <br />
-          <span class="inline-block mt-1">
-            <strong>Aimee Cassell</strong> —
-            <a href="mailto:aimee.cassell@gmail.com" style="color:var(--c-berry); text-decoration:underline">aimee.cassell@gmail.com</a>
-            &nbsp;·&nbsp;
-            <a href="tel:5133128179" style="color:var(--c-berry); text-decoration:underline">(513) 312-8179</a>
-          </span>
+          Still have questions? Email us at
+          <a href="mailto:jennhohl12@gmail.com"
+            style="color:var(--c-berry); text-decoration:underline">
+            jennhohl12@gmail.com
+          </a>
+          or call/text
+          <a href="tel:2396282775" style="color:var(--c-berry); text-decoration:underline">
+            (239) 628-2775
+          </a>.
+          We are happy to help.
         </p>
 
       </div>
     </section>
 
+    <hr class="section-divider" aria-hidden="true" />
+
+    <!-- ── RSVP ──────────────────────────────────────────────── -->
+    <section id="rsvp" class="py-20 px-6" aria-labelledby="rsvp-heading">
+      <div class="max-w-2xl mx-auto">
+
+        <div class="text-center mb-12 reveal">
+          <p class="label-caps mb-3" style="color:var(--c-rose-dark)">We hope to see you there</p>
+          <h2 id="rsvp-heading" class="heading-script"
+            style="font-size:clamp(2.5rem,8vw,4rem); color:var(--c-berry)">
+            RSVP
+          </h2>
+          <p class="prose-wedding mt-4 max-w-md mx-auto">
+            Please respond by <strong>January 15, 2027</strong>.
+            Kindly RSVP only for the guests named on your invitation.
+          </p>
+        </div>
+
+        <!--
+          ⚠ DEVELOPER NOTE:
+          This form is NOT connected to a backend. It performs front-end validation only.
+          On submit, it shows a placeholder success message.
+
+          To connect this form, choose one of:
+          • Formspree:       Change the action attribute to your Formspree URL and remove the e.preventDefault()
+          • Netlify Forms:   Add netlify attribute to the form tag
+          • Google Sheets:   Wire to a Google Apps Script URL
+          • Supabase:        Call Supabase REST API from the submit handler in main.js
+
+          See README.md for detailed instructions.
+        -->
+        <form id="rsvp-form" class="space-y-6 reveal" novalidate>
+
+          <!-- Name row -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="form-group">
+              <label for="rsvp-first" class="form-label">First Name *</label>
+              <input type="text" id="rsvp-first" name="first_name"
+                class="form-input" autocomplete="given-name" required />
+              <span id="rsvp-first-error" class="form-error">Please enter your first name.</span>
+            </div>
+            <div class="form-group">
+              <label for="rsvp-last" class="form-label">Last Name *</label>
+              <input type="text" id="rsvp-last" name="last_name"
+                class="form-input" autocomplete="family-name" required />
+              <span id="rsvp-last-error" class="form-error">Please enter your last name.</span>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="form-group">
+              <label for="rsvp-email" class="form-label">Email Address *</label>
+              <input type="email" id="rsvp-email" name="email"
+                class="form-input" autocomplete="email" required />
+              <span id="rsvp-email-error" class="form-error">Please enter a valid email address.</span>
+            </div>
+            <div class="form-group">
+              <label for="rsvp-phone" class="form-label">Phone (Optional)</label>
+              <input type="tel" id="rsvp-phone" name="phone"
+                class="form-input" autocomplete="tel" />
+            </div>
+          </div>
+
+          <!-- Attendance -->
+          <fieldset>
+            <legend class="form-label mb-3">Will you attend the ceremony &amp; reception? *</legend>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" id="attending-yes" name="attending" value="yes" required />
+                Joyfully accepts
+              </label>
+              <label class="radio-option">
+                <input type="radio" id="attending-no" name="attending" value="no" />
+                Regretfully declines
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Guest details (shown when attending = yes) -->
+          <div id="guest-details" style="display:none" class="space-y-6">
+
+            <div class="form-group">
+              <label for="rsvp-guests" class="form-label">Number of Guests Attending *</label>
+              <select id="rsvp-guests" name="guest_count" class="form-select" required>
+                <option value="">Select…</option>
+                <option value="1">1 guest (just me)</option>
+                <option value="2">2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+              </select>
+              <span id="rsvp-guests-error" class="form-error">Please select the number of guests.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-names" class="form-label">Name(s) of All Attending Guests</label>
+              <textarea id="rsvp-names" name="guest_names" class="form-textarea"
+                rows="2" placeholder="e.g. John Smith, Jane Smith"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-dietary" class="form-label">Dietary Restrictions or Allergies</label>
+              <textarea id="rsvp-dietary" name="dietary" class="form-textarea"
+                rows="2" placeholder="None, vegetarian, gluten-free, nut allergy, etc."></textarea>
+            </div>
+
+          </div>
+
+          <!-- Events interest -->
+          <fieldset>
+            <legend class="form-label mb-3">
+              Are you interested in attending the Red Sox game on Tuesday, March 23?
+              <span class="coming-soon ml-2" style="font-size:0.6rem">This is separate from the wedding RSVP</span>
+            </legend>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="redsox_interest" value="yes" />
+                Yes, I'm interested
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="redsox_interest" value="no" />
+                No thanks
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="redsox_interest" value="maybe" />
+                Maybe
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="form-label mb-3">Will you join us for the beach day on Friday, March 26?</legend>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="beach_interest" value="yes" />
+                Absolutely!
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="beach_interest" value="no" />
+                I can't make it
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="beach_interest" value="maybe" />
+                Maybe
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Song request -->
+          <div class="form-group">
+            <label for="rsvp-song" class="form-label">Song Request for the Dance Floor</label>
+            <input type="text" id="rsvp-song" name="song_request"
+              class="form-input" placeholder="What will get you on the dance floor?" />
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="rsvp-message" class="form-label">A Note for Evan &amp; Corrina (Optional)</label>
+            <textarea id="rsvp-message" name="message" class="form-textarea"
+              rows="3" placeholder="Share your well wishes, a favorite memory, or just say hello!"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary w-full" style="font-size:0.8rem">
+            Submit RSVP
+          </button>
+
+        </form>
+
+        <!-- Success message (shown after submit) -->
+        <div id="rsvp-success" tabindex="-1" style="display:none"
+          class="text-center py-12 px-6 reveal" aria-live="polite">
+          <p class="heading-script text-4xl mb-4" style="color:var(--c-berry)">
+            Thank you!
+          </p>
+          <div class="p-4 rounded-lg mb-5"
+            style="background:rgba(165,1,82,0.07); border:1px solid rgba(165,1,82,0.2); color:var(--c-berry)">
+            <strong>⚠ The RSVP system is still being connected.</strong><br>
+            No response has been submitted yet. We will let you know when the RSVP system is live.
+          </div>
+          <p class="prose-wedding text-sm">
+            We cannot wait to celebrate with you. If you have any questions in the meantime,
+            reach out to us directly.
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 
@@ -1225,6 +1414,12 @@
     </div>
   </footer>
 
+  <!-- ── Floating RSVP button (mobile only) ─── -->
+  <div id="rsvp-float" class="hidden" aria-hidden="true">
+    <a href="#rsvp" class="btn-primary shadow-lg" style="box-shadow:0 4px 20px rgba(165,1,82,0.35)">
+      RSVP
+    </a>
+  </div>
 
   <!-- ── Back to top ─── -->
   <button id="back-to-top" aria-label="Back to top of page">
