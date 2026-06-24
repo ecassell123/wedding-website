@@ -55,6 +55,51 @@ function initNav() {
     if (e.key === 'Escape' && menu?.classList.contains('open')) closeMenu()
   })
 
+  // Registry dropdown (desktop)
+  const registryBtn      = document.getElementById('registry-btn')
+  const registryDropdown = document.getElementById('registry-dropdown')
+  const registryChevron  = document.getElementById('registry-chevron')
+
+  function openRegistry() {
+    registryDropdown?.classList.remove('hidden')
+    registryBtn?.setAttribute('aria-expanded', 'true')
+    if (registryChevron) registryChevron.style.transform = 'rotate(180deg)'
+  }
+  function closeRegistry() {
+    registryDropdown?.classList.add('hidden')
+    registryBtn?.setAttribute('aria-expanded', 'false')
+    if (registryChevron) registryChevron.style.transform = ''
+  }
+
+  registryBtn?.addEventListener('click', e => {
+    e.stopPropagation()
+    registryDropdown?.classList.contains('hidden') ? openRegistry() : closeRegistry()
+  })
+  document.addEventListener('click', () => closeRegistry())
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeRegistry()
+  })
+
+  // Registry accordion (mobile)
+  const mobileRegistryBtn      = document.getElementById('mobile-registry-btn')
+  const mobileRegistryDropdown = document.getElementById('mobile-registry-dropdown')
+  const mobileRegistryChevron  = document.getElementById('mobile-registry-chevron')
+
+  mobileRegistryBtn?.addEventListener('click', () => {
+    const isOpen = !mobileRegistryDropdown?.classList.contains('hidden')
+    if (isOpen) {
+      mobileRegistryDropdown?.classList.add('hidden')
+      mobileRegistryDropdown?.classList.remove('flex')
+      mobileRegistryBtn?.setAttribute('aria-expanded', 'false')
+      if (mobileRegistryChevron) mobileRegistryChevron.style.transform = ''
+    } else {
+      mobileRegistryDropdown?.classList.remove('hidden')
+      mobileRegistryDropdown?.classList.add('flex')
+      mobileRegistryBtn?.setAttribute('aria-expanded', 'true')
+      if (mobileRegistryChevron) mobileRegistryChevron.style.transform = 'rotate(180deg)'
+    }
+  })
+
   // Trap focus inside open menu (simple)
   menu?.addEventListener('keydown', e => {
     if (e.key !== 'Tab' || !menu.classList.contains('open')) return

@@ -34,8 +34,8 @@
   <title>Evan &amp; Corrina | March 25, 2027</title>
 
   <!-- Vite entry point -->
-  <script type="module" crossorigin src="./assets/index-B94iJ1XE.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-Vheg46BC.css">
+  <script type="module" crossorigin src="./assets/index-Dae00eM5.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-P-Cl4fJB.css">
 </head>
 <body>
 
@@ -50,7 +50,7 @@
 
     <!-- Logo / Crest -->
     <a href="#hero" aria-label="The Cassell Wedding — return to top">
-      <span class="heading-script" style="color:#fff; line-height:1; font-size:clamp(1.9rem,5vw,2.6rem); display:inline-block; transform:translateY(4px)">The Cassell Wedding</span>
+      <span class="heading-script" style="color:#fff; line-height:1; font-size:clamp(1.25rem,4.5vw,2.6rem); display:inline-block; transform:translateY(4px); white-space:nowrap;">The Cassell Wedding</span>
     </a>
 
     <!-- Desktop links -->
@@ -61,6 +61,59 @@
       <li><a href="#travel"    class="nav-link">Travel</a></li>
       <li><a href="#gallery"   class="nav-link">Gallery</a></li>
       <li><a href="#faq"       class="nav-link">FAQ</a></li>
+
+      <!-- Registry dropdown -->
+      <li class="relative" id="registry-menu-item">
+        <button
+          id="registry-btn"
+          class="nav-link flex items-center gap-1"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="registry-dropdown"
+          style="background:none; border:none; cursor:pointer; padding:0;"
+        >
+          Registry
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true" style="margin-top:1px; transition:transform 0.2s;" id="registry-chevron">
+            <path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <ul
+          id="registry-dropdown"
+          role="menu"
+          class="hidden absolute right-0 mt-2 rounded-xl overflow-hidden shadow-lg"
+          style="min-width:160px; background:#fff; border:1px solid rgba(208,163,165,0.3); top:100%;"
+        >
+          <li role="none">
+            <a
+              href="https://www.amazon.com/wedding/guest-view/2LBUC8E6B22KQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="menuitem"
+              class="flex items-center gap-2 px-4 py-3 text-xs tracking-widest uppercase"
+              style="color:var(--c-text); font-family:var(--font-body); transition:background 0.15s;"
+              onmouseover="this.style.background='var(--c-ivory)'" onmouseout="this.style.background=''"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.285 14.18c-.34.19-.55.54-.55.92v.13c0 .38-.21.73-.55.92l-6.63 3.72a1.1 1.1 0 01-1.1 0l-6.63-3.72a1.05 1.05 0 01-.55-.92V8.77c0-.38.21-.73.55-.92l6.63-3.72a1.1 1.1 0 011.1 0l6.63 3.72c.34.19.55.54.55.92v.13c0 .38.21.73.55.92" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Amazon
+            </a>
+          </li>
+          <li role="none" style="border-top:1px solid rgba(208,163,165,0.2)">
+            <a
+              href="https://www.target.com/gift-registry/gift-giver?registryId=5772ceb0-404c-11f1-b66e-637779af684f&type=WEDDING"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="menuitem"
+              class="flex items-center gap-2 px-4 py-3 text-xs tracking-widest uppercase"
+              style="color:var(--c-text); font-family:var(--font-body); transition:background 0.15s;"
+              onmouseover="this.style.background='var(--c-ivory)'" onmouseout="this.style.background=''"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#CC0000" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="#CC0000" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" fill="#CC0000"/></svg>
+              Target
+            </a>
+          </li>
+        </ul>
+      </li>
+
       <li>
         <a href="#rsvp" class="btn-primary text-xs py-2 px-5"
           style="min-height:36px; padding-top:0.5rem; padding-bottom:0.5rem; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.5); color:#fff;">RSVP</a>
@@ -100,6 +153,37 @@
       <a href="#travel"    class="nav-link text-lg tracking-widest">Travel</a>
       <a href="#gallery"   class="nav-link text-lg tracking-widest">Gallery</a>
       <a href="#faq"       class="nav-link text-lg tracking-widest">FAQ</a>
+
+      <!-- Registry accordion (mobile) -->
+      <div class="flex flex-col items-center">
+        <button
+          id="mobile-registry-btn"
+          class="nav-link text-lg tracking-widest flex items-center gap-2"
+          aria-expanded="false"
+          aria-controls="mobile-registry-dropdown"
+          style="background:none; border:none; cursor:pointer;"
+        >
+          Registry
+          <svg id="mobile-registry-chevron" width="12" height="12" viewBox="0 0 10 10" fill="none" aria-hidden="true" style="transition:transform 0.2s;">
+            <path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div id="mobile-registry-dropdown" class="hidden flex-col items-center gap-2 mt-2">
+          <a href="https://www.amazon.com/wedding/guest-view/2LBUC8E6B22KQ"
+            target="_blank" rel="noopener noreferrer"
+            class="nav-link text-base tracking-widest flex items-center gap-2"
+            style="color:var(--c-text);">
+            Amazon ↗
+          </a>
+          <a href="https://www.target.com/gift-registry/gift-giver?registryId=5772ceb0-404c-11f1-b66e-637779af684f&type=WEDDING"
+            target="_blank" rel="noopener noreferrer"
+            class="nav-link text-base tracking-widest flex items-center gap-2"
+            style="color:var(--c-text);">
+            Target ↗
+          </a>
+        </div>
+      </div>
+
       <a href="#rsvp"      class="btn-primary mt-4">RSVP Now</a>
     </nav>
 
