@@ -32,7 +32,7 @@ export const couple = {
 
 // ─── Wedding Date ───────────────────────────────────────────────
 export const weddingDate = {
-  iso:        '2027-03-25T17:00:00',  // Update time when ceremony time is confirmed
+  iso:        '2027-03-25T16:00:00',  // Ceremony starts at 4:00 PM
   display:    'Thursday, March 25, 2027',
   short:      'March 25, 2027',
   location:   'Fort Myers, Florida',
@@ -119,8 +119,8 @@ export const events = {
     venue:       'Edison & Ford Winter Estates',
     address:     '2350 McGregor Blvd, Fort Myers, FL 33901',
     mapsUrl:     'https://maps.google.com/?q=Edison+Ford+Winter+Estates+Fort+Myers+Florida',
-    guestArrival:'TBD',
-    time:        'TBD',
+    guestArrival:'3:30 PM — Please plan to arrive by 3:30 PM',
+    time:        '4:00 PM',
     description: 'Join us along the Caloosahatchee River as we exchange vows surrounded by historic gardens, palms, and the people we love most.',
     details: {
       dresscode:       'Formal',
@@ -285,7 +285,7 @@ export const faq = [
   },
   {
     q: 'Who should I contact with questions?',
-    a: `Please email us at ${contact.email} and we will get back to you as soon as possible.`,
+    a: `Reach out to our moms — they would love to help! Jenn Hohl: jennhohl12@gmail.com or (502) 780-1722. Aimee Cassell: aimee.cassell@gmail.com or (513) 312-8179.`,
   },
 ]
 
