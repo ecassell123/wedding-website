@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         rose:    { DEFAULT: '#d0a3a5', light: '#e8c8ca', dark: '#b8888a' },
-        berry:   { DEFAULT: '#a50152', light: '#c2006a', dark: '#7a003d' },
+        berry:   { DEFAULT: '#ff6767', light: '#ff9090', dark: '#e04040' },
         sage:    { DEFAULT: '#949a5d', light: '#b0b578', dark: '#737848' },
         olive:   { DEFAULT: '#505939', light: '#6b7550', dark: '#363d27' },
         ivory:   { DEFAULT: '#faf6f0', light: '#fdfaf6', dark: '#f0e8dc' },
