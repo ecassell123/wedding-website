@@ -140,11 +140,11 @@ export const events = {
     subtitle:    'Dinner · Dancing · Celebrating',
     badge:       'The Celebration',
     badgeStyle:  'wedding',
-    venue:       'Oasis Outdoors',
-    address:     '1001 Palm Ave, North Fort Myers, FL 33903',
-    mapsUrl:     'https://maps.google.com/?q=1001+Palm+Ave+North+Fort+Myers+FL+33903',
+    venue:       'Edison Country Club',
+    address:     '3800 Palm Beach Blvd, Fort Myers, FL 33916',
+    mapsUrl:     'https://maps.google.com/?q=Edison+Country+Club+Fort+Myers+FL',
     time:        'TBD',
-    description: 'After the ceremony, the celebration continues at Oasis Outdoors — the outdoor venue at our store, Chop it Up. Join us for dinner, drinks, music, dancing, and a night that feels completely like us.',
+    description: 'After the ceremony, the celebration continues at Edison Country Club. Join us for dinner, drinks, music, dancing, and a night we will never forget.',
     timeline: {
       cocktailHour:   'TBD',
       receptionStart: 'TBD',
@@ -210,7 +210,7 @@ export const travel = {
   ],
   hotels: {
     show: true,
-    note: 'We have a room block in Downtown Fort Myers and highly encourage all guests to stay there. It is walking distance to both the ceremony at Edison & Ford Winter Estates and the reception at Oasis Outdoors — and a beautiful walk across the downtown bridge connects them. Staying downtown means no traffic headaches and you can enjoy the celebration without worrying about getting around.',
+    note: 'We have a room block in Downtown Fort Myers and highly encourage all guests to stay there. It is walking distance to both the ceremony at Edison & Ford Winter Estates and the reception at Edison Country Club. Staying downtown means no traffic headaches and you can enjoy the celebration without worrying about getting around.',
     block: {
       area:    'Downtown Fort Myers',
       details: 'Room block details coming soon — check back here or watch for an email from us.',
@@ -262,10 +262,6 @@ export const faq = [
   {
     q: 'What happens if it rains?',
     a: 'We are working on a weather contingency plan and will share it here. Southwest Florida in late March is typically beautiful, but we will be prepared.',
-  },
-  {
-    q: 'Can I attend the Red Sox spring-training game?',
-    a: 'Yes! The game on Tuesday, March 23 is open to anyone who wants to come. Guests will purchase their own tickets. More details coming soon.',
   },
   {
     q: 'Is the welcome party open to everyone?',
