@@ -1311,6 +1311,18 @@
               </div>
             </div>
 
+            <!-- Additional guest names -->
+            <div class="mb-6" id="additional-guests-wrap" style="display:none;">
+              <label for="rsvp-guest-names" class="label-caps mb-2 block" style="color:var(--c-text-soft); font-size:0.7rem">
+                Names of Additional Guests
+              </label>
+              <textarea id="rsvp-guest-names" name="guestNames" rows="3"
+                placeholder="e.g. Jane Smith, Tom Johnson"
+                class="w-full rounded-xl px-4 py-3 prose-wedding"
+                style="border:1.5px solid rgba(208,163,165,0.5); background:#fff; outline:none; transition:border-color 0.2s; color:var(--c-text); resize:vertical;"
+                onfocus="this.style.borderColor='var(--c-berry)'" onblur="this.style.borderColor='rgba(208,163,165,0.5)'"></textarea>
+            </div>
+
             <!-- Dietary restrictions -->
             <div class="mb-6">
               <label for="rsvp-dietary" class="label-caps mb-2 block" style="color:var(--c-text-soft); font-size:0.7rem">

@@ -267,7 +267,7 @@ function initGallery() {
 }
 
 // ── RSVP form ────────────────────────────────────────────────────────────────
-const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxdkt1E0OcdlF5t8rDkrP7UJ2UhF5PFYoEPlwAsIo8GwFyZWxV9jGa6cwIDFdypI6g/exec'
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxVhK1A2uzEszoeFv1V5Gd6QCn-ZJGWkEr__wHRxlnL5hgrRQRhyNItMXsk5jcEONMV/exec'
 
 function initRSVP() {
   const form    = document.getElementById('rsvp-form')
@@ -275,6 +275,16 @@ function initRSVP() {
   const errorEl = document.getElementById('rsvp-error')
   const submitBtn = document.getElementById('rsvp-submit')
   if (!form) return
+
+  // Show additional guest names field when 2+ guests selected
+  const guestsSelect = form.querySelector('#rsvp-guests')
+  const guestNamesWrap = document.getElementById('additional-guests-wrap')
+  guestsSelect?.addEventListener('change', () => {
+    const val = guestsSelect.value
+    if (guestNamesWrap) {
+      guestNamesWrap.style.display = (val && val !== '1') ? 'block' : 'none'
+    }
+  })
 
   form.addEventListener('submit', async e => {
     e.preventDefault()
@@ -289,6 +299,7 @@ function initRSVP() {
       return
     }
 
+    const guestNames   = form.querySelector('#rsvp-guest-names').value.trim()
     const welcomeParty = form.querySelector('[name="welcomeParty"]')?.checked ? 'Yes' : 'No'
     const wedding      = form.querySelector('[name="wedding"]')?.checked      ? 'Yes' : 'No'
     const beachDay     = form.querySelector('[name="beachDay"]')?.checked     ? 'Yes' : 'No'
@@ -299,7 +310,7 @@ function initRSVP() {
     submitBtn.disabled    = true
 
     const params = new URLSearchParams({
-      name, email, guests, welcomeParty, wedding, beachDay, dietary, song
+      name, email, guests, guestNames, welcomeParty, wedding, beachDay, dietary, song
     })
 
     try {
