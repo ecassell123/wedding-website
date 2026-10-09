@@ -277,7 +277,7 @@ export const faq = [
   },
   {
     q: 'Is there a wedding registry?',
-    a: 'Yes! Our wedding registry is on Amazon. You can find it at amazon.com/wedding/share/evanandcorrinaflorida.',
+    a: 'Yes! We have registries on <a href="https://www.amazon.com/wedding/share/evanandcorrinaflorida" target="_blank" rel="noopener noreferrer" style="color:var(--c-berry);text-decoration:underline;">Amazon</a>, <a href="https://www.target.com/gift-registry/gift-giver?registryId=5772ceb0-404c-11f1-b66e-637779af684f&type=WEDDING" target="_blank" rel="noopener noreferrer" style="color:var(--c-berry);text-decoration:underline;">Target</a>, and <a href="https://www.crateandbarrel.com/gift-registry/corrina-hohl/r7585909" target="_blank" rel="noopener noreferrer" style="color:var(--c-berry);text-decoration:underline;">Crate &amp; Barrel</a>.',
   },
   {
     q: 'Who should I contact with questions?',
