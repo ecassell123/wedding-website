@@ -267,7 +267,7 @@ function initGallery() {
 }
 
 // ── RSVP form ────────────────────────────────────────────────────────────────
-const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwFbeZDO3V_H9LafqaaHpArCgftliILQM5n6pvowsx-3GktlMl5OydISVfdFyhBO13R/exec'
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxdkt1E0OcdlF5t8rDkrP7UJ2UhF5PFYoEPlwAsIo8GwFyZWxV9jGa6cwIDFdypI6g/exec'
 
 function initRSVP() {
   const form    = document.getElementById('rsvp-form')
