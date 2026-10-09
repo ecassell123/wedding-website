@@ -36,7 +36,7 @@ export const weddingDate = {
   display:    'Thursday, March 25, 2027',
   short:      'March 25, 2027',
   location:   'Fort Myers, Florida',
-  rsvpDeadline: 'January 15, 2027',   // Update when confirmed
+  rsvpDeadline: 'January 31, 2027',
 }
 
 // ─── Contact ────────────────────────────────────────────────────
@@ -277,7 +277,7 @@ export const faq = [
   },
   {
     q: 'Is there a wedding registry?',
-    a: 'Registry information is coming soon.',
+    a: 'Yes! Our wedding registry is on Amazon. You can find it at amazon.com/wedding/share/evanandcorrinaflorida.',
   },
   {
     q: 'Who should I contact with questions?',
