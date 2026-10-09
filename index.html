@@ -60,6 +60,7 @@
       <li><a href="#travel"    class="nav-link">Travel</a></li>
       <li><a href="#gallery"   class="nav-link">Gallery</a></li>
       <li><a href="#faq"       class="nav-link">FAQ</a></li>
+      <li><a href="#rsvp"      class="nav-link" style="color:var(--c-berry); font-weight:600;">RSVP</a></li>
 
       <!-- Registry dropdown -->
       <li class="relative" id="registry-menu-item">
@@ -162,6 +163,7 @@
       <a href="#travel"    class="nav-link text-lg tracking-widest">Travel</a>
       <a href="#gallery"   class="nav-link text-lg tracking-widest">Gallery</a>
       <a href="#faq"       class="nav-link text-lg tracking-widest">FAQ</a>
+      <a href="#rsvp"      class="nav-link text-lg tracking-widest" style="color:var(--c-berry); font-weight:600;">RSVP</a>
 
       <!-- Registry accordion (mobile) -->
       <div class="flex flex-col items-center">
@@ -1213,6 +1215,150 @@
           </a>.
           We are happy to help.
         </p>
+
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true" />
+
+    <!-- ── RSVP ──────────────────────────────────────────────── -->
+    <section id="rsvp" class="py-20 px-6" aria-labelledby="rsvp-heading">
+      <div class="max-w-2xl mx-auto">
+
+        <div class="text-center mb-12 reveal">
+          <p class="label-caps mb-3" style="color:var(--c-rose-dark)">We'd love to see you there</p>
+          <h2 id="rsvp-heading" class="heading-script"
+            style="font-size:clamp(2.5rem,8vw,4rem); color:var(--c-berry)">
+            RSVP
+          </h2>
+          <p class="prose-wedding mt-4" style="color:var(--c-text-soft)">
+            Please respond by <strong>January 31, 2027</strong>
+          </p>
+        </div>
+
+        <!-- Form card -->
+        <div id="rsvp-form-wrap" class="reveal rounded-2xl p-8 md:p-10"
+          style="background:var(--c-ivory); border:1px solid rgba(208,163,165,0.35); box-shadow:0 4px 24px rgba(0,0,0,0.06)">
+
+          <form id="rsvp-form" novalidate>
+
+            <!-- Full name -->
+            <div class="mb-6">
+              <label for="rsvp-name" class="label-caps mb-2 block" style="color:var(--c-text-soft); font-size:0.7rem">
+                Full Name <span style="color:var(--c-berry)">*</span>
+              </label>
+              <input id="rsvp-name" name="name" type="text" required
+                placeholder="Your full name"
+                class="w-full rounded-xl px-4 py-3 prose-wedding"
+                style="border:1.5px solid rgba(208,163,165,0.5); background:#fff; outline:none; transition:border-color 0.2s; color:var(--c-text);"
+                onfocus="this.style.borderColor='var(--c-berry)'" onblur="this.style.borderColor='rgba(208,163,165,0.5)'" />
+            </div>
+
+            <!-- Email -->
+            <div class="mb-6">
+              <label for="rsvp-email" class="label-caps mb-2 block" style="color:var(--c-text-soft); font-size:0.7rem">
+                Email Address <span style="color:var(--c-berry)">*</span>
+              </label>
+              <input id="rsvp-email" name="email" type="email" required
+                placeholder="you@example.com"
+                class="w-full rounded-xl px-4 py-3 prose-wedding"
+                style="border:1.5px solid rgba(208,163,165,0.5); background:#fff; outline:none; transition:border-color 0.2s; color:var(--c-text);"
+                onfocus="this.style.borderColor='var(--c-berry)'" onblur="this.style.borderColor='rgba(208,163,165,0.5)'" />
+            </div>
+
+            <!-- Number of guests -->
+            <div class="mb-6">
+              <label for="rsvp-guests" class="label-caps mb-2 block" style="color:var(--c-text-soft); font-size:0.7rem">
+                Number of Guests Attending <span style="color:var(--c-berry)">*</span>
+              </label>
+              <select id="rsvp-guests" name="guests" required
+                class="w-full rounded-xl px-4 py-3 prose-wedding"
+                style="border:1.5px solid rgba(208,163,165,0.5); background:#fff; outline:none; transition:border-color 0.2s; color:var(--c-text); appearance:none; cursor:pointer;"
+                onfocus="this.style.borderColor='var(--c-berry)'" onblur="this.style.borderColor='rgba(208,163,165,0.5)'">
+                <option value="" disabled selected>Select…</option>
+                <option value="1">1 — Just me</option>
+                <option value="2">2 — Me + 1</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5 or more</option>
+              </select>
+            </div>
+
+            <!-- Attending events -->
+            <div class="mb-6">
+              <p class="label-caps mb-3" style="color:var(--c-text-soft); font-size:0.7rem">
+                Which events will you attend? <span style="color:var(--c-berry)">*</span>
+              </p>
+              <div class="flex flex-col gap-3">
+                <label class="flex items-center gap-3 cursor-pointer prose-wedding">
+                  <input type="checkbox" name="welcomeParty" value="Yes"
+                    class="w-5 h-5 rounded"
+                    style="accent-color:var(--c-berry); cursor:pointer;" />
+                  Welcome Party — Wednesday, March 24
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer prose-wedding">
+                  <input type="checkbox" name="wedding" value="Yes"
+                    class="w-5 h-5 rounded"
+                    style="accent-color:var(--c-berry); cursor:pointer;" />
+                  Wedding &amp; Reception — Thursday, March 25
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer prose-wedding">
+                  <input type="checkbox" name="beachDay" value="Yes"
+                    class="w-5 h-5 rounded"
+                    style="accent-color:var(--c-berry); cursor:pointer;" />
+                  Beach Day — Friday, March 26
+                </label>
+              </div>
+            </div>
+
+            <!-- Dietary restrictions -->
+            <div class="mb-6">
+              <label for="rsvp-dietary" class="label-caps mb-2 block" style="color:var(--c-text-soft); font-size:0.7rem">
+                Dietary Restrictions or Allergies
+              </label>
+              <input id="rsvp-dietary" name="dietary" type="text"
+                placeholder="None, vegetarian, gluten-free, etc."
+                class="w-full rounded-xl px-4 py-3 prose-wedding"
+                style="border:1.5px solid rgba(208,163,165,0.5); background:#fff; outline:none; transition:border-color 0.2s; color:var(--c-text);"
+                onfocus="this.style.borderColor='var(--c-berry)'" onblur="this.style.borderColor='rgba(208,163,165,0.5)'" />
+            </div>
+
+            <!-- Song request -->
+            <div class="mb-8">
+              <label for="rsvp-song" class="label-caps mb-2 block" style="color:var(--c-text-soft); font-size:0.7rem">
+                What song will have you running to the dance floor? 🎶
+              </label>
+              <input id="rsvp-song" name="song" type="text"
+                placeholder="Artist — Song title"
+                class="w-full rounded-xl px-4 py-3 prose-wedding"
+                style="border:1.5px solid rgba(208,163,165,0.5); background:#fff; outline:none; transition:border-color 0.2s; color:var(--c-text);"
+                onfocus="this.style.borderColor='var(--c-berry)'" onblur="this.style.borderColor='rgba(208,163,165,0.5)'" />
+            </div>
+
+            <!-- Error message -->
+            <p id="rsvp-error" class="text-center mb-4 prose-wedding text-sm hidden"
+              style="color:#c0392b;">
+              Please fill in all required fields before submitting.
+            </p>
+
+            <!-- Submit -->
+            <button type="submit" id="rsvp-submit"
+              class="w-full rounded-xl py-4 label-caps tracking-widest transition-all"
+              style="background:var(--c-berry); color:#fff; border:none; cursor:pointer; font-size:0.85rem; letter-spacing:0.2em;">
+              Send RSVP
+            </button>
+
+          </form>
+
+          <!-- Success state (hidden until submitted) -->
+          <div id="rsvp-success" class="hidden text-center py-8">
+            <p class="heading-script mb-3" style="font-size:2.5rem; color:var(--c-berry)">We can't wait to see you!</p>
+            <p class="prose-wedding" style="color:var(--c-text-soft)">
+              Your RSVP has been received. We'll be in touch as the big day gets closer.
+            </p>
+          </div>
+
+        </div>
 
       </div>
     </section>

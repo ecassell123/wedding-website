@@ -267,78 +267,57 @@ function initGallery() {
 }
 
 // ── RSVP form ────────────────────────────────────────────────────────────────
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwFbeZDO3V_H9LafqaaHpArCgftliILQM5n6pvowsx-3GktlMl5OydISVfdFyhBO13R/exec'
+
 function initRSVP() {
   const form    = document.getElementById('rsvp-form')
   const success = document.getElementById('rsvp-success')
+  const errorEl = document.getElementById('rsvp-error')
+  const submitBtn = document.getElementById('rsvp-submit')
   if (!form) return
 
-  function validate() {
-    let valid = true
-
-    const required = form.querySelectorAll('[required]')
-    required.forEach(field => {
-      const err = document.getElementById(`${field.id}-error`)
-      if (!field.value.trim()) {
-        field.classList.add('error')
-        if (err) err.classList.add('visible')
-        valid = false
-      } else {
-        field.classList.remove('error')
-        if (err) err.classList.remove('visible')
-      }
-    })
-
-    // Email format
-    const email = form.querySelector('#rsvp-email')
-    if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      email.classList.add('error')
-      const err = document.getElementById('rsvp-email-error')
-      if (err) { err.textContent = 'Please enter a valid email address.'; err.classList.add('visible') }
-      valid = false
-    }
-
-    return valid
-  }
-
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault()
-    if (!validate()) return
+    if (errorEl) errorEl.classList.add('hidden')
 
-    // ⚠ RSVP FORM IS NOT CONNECTED TO A BACKEND.
-    // Replace this block with your form submission logic (Formspree, Netlify Forms, etc.)
-    form.style.display = 'none'
-    if (success) {
-      success.style.display = 'block'
-      success.focus()
+    const name    = form.querySelector('#rsvp-name').value.trim()
+    const email   = form.querySelector('#rsvp-email').value.trim()
+    const guests  = form.querySelector('#rsvp-guests').value
+
+    if (!name || !email || !guests) {
+      if (errorEl) errorEl.classList.remove('hidden')
+      return
+    }
+
+    const welcomeParty = form.querySelector('[name="welcomeParty"]')?.checked ? 'Yes' : 'No'
+    const wedding      = form.querySelector('[name="wedding"]')?.checked      ? 'Yes' : 'No'
+    const beachDay     = form.querySelector('[name="beachDay"]')?.checked     ? 'Yes' : 'No'
+    const dietary      = form.querySelector('#rsvp-dietary').value.trim()
+    const song         = form.querySelector('#rsvp-song').value.trim()
+
+    submitBtn.textContent = 'Sending…'
+    submitBtn.disabled    = true
+
+    const params = new URLSearchParams({
+      name, email, guests, welcomeParty, wedding, beachDay, dietary, song
+    })
+
+    try {
+      await fetch(`${RSVP_ENDPOINT}?${params}`, { method: 'GET', mode: 'no-cors' })
+      form.classList.add('hidden')
+      if (success) {
+        success.classList.remove('hidden')
+        success.focus()
+      }
+    } catch {
+      submitBtn.textContent = 'Send RSVP'
+      submitBtn.disabled    = false
+      if (errorEl) {
+        errorEl.textContent = 'Something went wrong — please try again or email us directly.'
+        errorEl.classList.remove('hidden')
+      }
     }
   })
-
-  // Live validation on blur
-  form.querySelectorAll('[required]').forEach(field => {
-    field.addEventListener('blur', () => {
-      const err = document.getElementById(`${field.id}-error`)
-      if (!field.value.trim()) {
-        field.classList.add('error')
-        if (err) err.classList.add('visible')
-      } else {
-        field.classList.remove('error')
-        if (err) err.classList.remove('visible')
-      }
-    })
-  })
-
-  // Guest count toggle
-  const attendingYes = document.getElementById('attending-yes')
-  const attendingNo  = document.getElementById('attending-no')
-  const guestSection = document.getElementById('guest-details')
-
-  function toggleGuests() {
-    const showing = attendingYes?.checked
-    if (guestSection) guestSection.style.display = showing ? 'block' : 'none'
-  }
-
-  attendingYes?.addEventListener('change', toggleGuests)
-  attendingNo?.addEventListener('change',  toggleGuests)
 }
 
 // ── Scroll utilities ─────────────────────────────────────────────────────────
