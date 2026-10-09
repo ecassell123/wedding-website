@@ -241,7 +241,7 @@ export const faq = [
   },
   {
     q: 'What should I wear?',
-    a: 'Dress code details are coming soon! We\'ll have full attire guidance posted here. In the meantime, think: elegant and warm-weather friendly.',
+    a: 'The Welcome Party on Wednesday is casual — come comfortable and relaxed. The Wedding on Thursday is formal attire.',
   },
   {
     q: 'Where should I stay?',
@@ -253,7 +253,7 @@ export const faq = [
   },
   {
     q: 'Is parking available at the ceremony?',
-    a: 'TBD — Parking details for Edison & Ford Winter Estates are coming soon.',
+    a: 'Yes! On-site parking is available at Edison & Ford Winter Estates.',
   },
   {
     q: 'Is the ceremony outdoors?',
