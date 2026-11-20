@@ -276,6 +276,25 @@ function initRSVP() {
   const submitBtn = document.getElementById('rsvp-submit')
   if (!form) return
 
+  // Inline name validation on blur
+  const nameInput = form.querySelector('#rsvp-name')
+  const nameError = document.getElementById('rsvp-name-error')
+  nameInput?.addEventListener('blur', () => {
+    if (!nameInput.value.trim()) {
+      nameError?.classList.remove('hidden')
+      nameInput.style.borderColor = '#c0392b'
+    } else {
+      nameError?.classList.add('hidden')
+      nameInput.style.borderColor = 'rgba(208,163,165,0.5)'
+    }
+  })
+  nameInput?.addEventListener('input', () => {
+    if (nameInput.value.trim()) {
+      nameError?.classList.add('hidden')
+      nameInput.style.borderColor = 'var(--c-berry)'
+    }
+  })
+
   // Show additional guest names field when 2+ guests selected
   const guestsSelect = form.querySelector('#rsvp-guests')
   const guestNamesWrap = document.getElementById('additional-guests-wrap')
@@ -293,11 +312,26 @@ function initRSVP() {
     const name    = form.querySelector('#rsvp-name').value.trim()
     const email   = form.querySelector('#rsvp-email').value.trim()
     const guests  = form.querySelector('#rsvp-guests').value
+    const nameError = document.getElementById('rsvp-name-error')
 
-    if (!name || !email || !guests) {
+    let valid = true
+
+    if (!name) {
+      if (nameError) nameError.classList.remove('hidden')
+      form.querySelector('#rsvp-name').style.borderColor = '#c0392b'
+      valid = false
+    } else {
+      if (nameError) nameError.classList.add('hidden')
+    }
+
+    if (!email || !guests) valid = false
+
+    if (!valid) {
       if (errorEl) errorEl.classList.remove('hidden')
       return
     }
+
+    if (errorEl) errorEl.classList.add('hidden')
 
     const guestNames   = form.querySelector('#rsvp-guest-names').value.trim()
     const welcomeParty = form.querySelector('[name="welcomeParty"]')?.checked ? 'Yes' : 'No'
